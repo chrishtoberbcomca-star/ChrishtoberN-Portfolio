@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrishtober N | Product UI/UX Designer Portfolio</title>
+  <meta name="description"
+    content="Chrishtober N — Product UI/UX Designer creating seamless digital experiences. View my portfolio, skills, and get in touch.">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo"> <span>Chrishto</span> </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About me</a>
+        <a href="#skills">Skills</a>
+        <a href="#works">Projects</a>
+        <a href="#services">Service</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="nav-contact-btn" onclick="scrollToSection('contact')">Contact Me</button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
+    <a href="#home" onclick="closeMobileNav()">Home</a>
+    <a href="#about" onclick="closeMobileNav()">About me</a>
+    <a href="#skills" onclick="closeMobileNav()">Skills</a>
+    <a href="#works" onclick="closeMobileNav()">Projects</a>
+    <a href="#services" onclick="closeMobileNav()">Service</a>
+    <a href="#contact" onclick="closeMobileNav()">Contact</a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-text">
+        <p class="greeting">Hello There.. <span>👋</span></p>
+        <h1>I'm <span class="name-highlight">CHRISHTOBER N</h1>
+        <p class="role">UI/UX Designer</p>
+        <p class="hero-desc">
+          I design user-centered digital products and solve real problems. In my work, I strive to create products that
+          are simple, intuitive, solutions and accessible to everyone.
+        </p>
+        <div class="hero-ctas">
+          <button class="btn-primary" onclick="scrollToSection('works')">Projects</button>
+          <a href="file:///C:/Users/ADMIN/Downloads/chrishtober_resume.pdf" download class="btn-outline">
+            <span class="material-symbols-outlined" style="font-size:1rem">download</span>
+            My Resume
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="stat-number">11+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Project Lived</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="stat-number">01+</div>
+            <div class="stat-label">Years Exp.</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-wrapper">
+          <img src="Hero-section-image.png" alt="Chrishtober N - UI/UX Designer">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-image fade-up">
+        <div class="about-image-wrapper">
+          <img src="Chrishto image.png" alt="Chrishtober N portrait">
+        </div>
+      </div>
+      <div class="about-content fade-up">
+        <p class="section-label">About me</p>
+        <h2 class="section-title">About me</h2>
+        <p class="about-desc">
+          I'm a product designer passionate about crafting simple and beautiful digital experiences. With a degree in
+          computer science/Mass communication, my approach to UI/UX design, I focus on solving real user problems
+          through research, iteration, ideation, and communication/interaction.
+        </p>
+        <div class="about-info-list">
+          <div class="about-info-item">
+            <div class="info-icon">
+              <span class="material-symbols-outlined">school</span>
+            </div>
+            <div class="info-text"><strong>Education:</strong> Bachelor of commerce with computer applications</div>
+          </div>
+          <div class="about-info-item">
+            <div class="info-icon">
+              <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <div class="info-text"><strong>Location:</strong> Tiruppur, Tamil Nadu, India</div>
+          </div>
+          <div class="about-info-item">
+            <div class="info-icon">
+              <span class="material-symbols-outlined">work</span>
+            </div>
+            <div class="info-text"><strong>experiences:</strong> 1+ year experienced UI/UX Designer.</div>
+          </div>
+        </div>
+        <a href="file:///C:/Users/ADMIN/Downloads/chrishtober_resume.pdf" download class="btn-teams">
+          <span class="material-symbols-outlined" style="font-size:1.1rem">download</span>
+          My Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="skills-header fade-up">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">I Know the Skills</h2>
+      </div>
+
+      <div class="skills-tabs fade-up" id="skillsTabs">
+        <button class="skill-tab active" data-tab="tools">
+          <span class="material-symbols-outlined tab-icon">construction</span>
+          Tools
+        </button>
+        <button class="skill-tab" data-tab="ui">
+          <span class="material-symbols-outlined tab-icon">palette</span>
+          UI - Skills
+        </button>
+        <button class="skill-tab" data-tab="ux">
+          <span class="material-symbols-outlined tab-icon">psychology</span>
+          UX - Skills
+        </button>
+      </div>
+
+      <div class="skills-content fade-up">
+        <!-- Tools Panel -->
+        <div class="skill-panel active" id="panel-tools">
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Figma AI</span>
+            <span class="skill-tag">Adobe illustrator</span>
+            <span class="skill-tag">Adobe Photoshop</span>
+            <span class="skill-tag">Framer</span>
+            <span class="skill-tag">Google stitch</span>
+          </div>
+        </div>
+        <!-- UI Panel -->
+        <div class="skill-panel" id="panel-ui">
+          <div class="skill-tags">
+            <span class="skill-tag">Visual Design</span>
+            <span class="skill-tag">Typography</span>
+            <span class="skill-tag">Information Architecture</span>
+            <span class="skill-tag">Color Theory</span>
+            <span class="skill-tag">Design Systems</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">Typography</span>
+            <span class="skill-tag">High-Fidelity UI Design</span>
+            <span class="skill-tag">Iconography</span>
+            <span class="skill-tag">UI Components & Layouts</span>
+            <span class="skill-tag">Interaction Design</span>
+          </div>
+        </div>
+        <!-- UX Panel -->
+        <div class="skill-panel" id="panel-ux">
+          <div class="skill-tags">
+            <span class="skill-tag"> User Research</span>
+            <span class="skill-tag">User Personas</span>
+            <span class="skill-tag">User Flow</span>
+            <span class="skill-tag">Prototyping</span>
+            <span class="skill-tag">Screen design</span>
+            <span class="skill-tag">Wireframing (Low, Mid Fidelity)</span>
+            <span class="skill-tag">Usability Testing</span>
+            <span class="skill-tag">Information Architecture</span>
+            <span class="skill-tag">User Mapping</span>
+            <span class="skill-tag">Empathy Mapping</span>
+            <span class="skill-tag">Competitive Analysis</span>
+            <span class="skill-tag">Card Sorting</span>
+            <span class="skill-tag">User Interviews</span>
+            <span class="skill-tag">Design Thinking</span>
+            <span class="skill-tag">Problem Solving</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== WORKS ========== -->
+  <section class="works" id="works">
+    <div class="container">
+      <div class="works-header fade-up">
+        <div>
+          <p class="section-label">Featured Projects</p>
+          <h2 class="section-title">My Amazing Works</h2>
+        </div>
+      </div>
+
+      <div class="works-grid">
+        <!-- Project 1 -->
+        <div class="work-card fade-up">
+          <div class="work-card-image">
+            <img src="Road rules app.png" alt="Road Rules App">
+          </div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Road Rules app - Case Study</h3>
+            <p class="work-card-sub">Traffic navigation mobile application</p>
+            <div class="work-card-links">
+              <a href="https://play.google.com/store/apps/details?id=com.skyraan.roadrules&pcampaignid=web_share"
+                class="work-link primary-link">Link</a>
+              <a href="https://www.behance.net/gallery/246188563/Road-Rules-Case-Study"
+                class="work-link outline-link">Case Study</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="work-card fade-up">
+          <div class="work-card-image">
+            <img src="Toilet finder app.png" alt="Toilet Finder App">
+          </div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Toilet finder app - Case Study</h3>
+            <p class="work-card-sub">Utility locating mobile application</p>
+            <div class="work-card-links">
+              <a href="https://play.google.com/store/apps/details?id=com.toilet.finder&pcampaignid=web_share"
+                class="work-link primary-link">Link</a>
+              <a href="https://www.behance.net/gallery/247493649/Toilet-Finder-App-Project-overview"
+                class="work-link outline-link">Case Study</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="work-card fade-up">
+          <div class="work-card-image">
+            <img src="Trusk ledger app.png" alt="Truck Ledger App">
+          </div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Truck Ledger app - Case Study</h3>
+            <p class="work-card-sub">Logistics management application</p>
+            <div class="work-card-links">
+              <a href="#" class="work-link primary-link">Link</a>
+              <a href="#" class="work-link outline-link">Case Study</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="work-card fade-up">
+          <div class="work-card-image">
+            <img src="gym membership software.png" alt="RaanZo App">
+          </div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">RaanZo app - Case Study</h3>
+            <p class="work-card-sub">Traffic navigation redesign</p>
+            <div class="work-card-links">
+              <a href="#" class="work-link primary-link">Link</a>
+              <a href="#" class="work-link outline-link">Case Study</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 5 -->
+        <div class="work-card fade-up">
+          <div class="work-card-image">
+            <img src="gym membership software.png" alt="Road Rules App v3">
+          </div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Gym Membership Software</h3>
+            <p class="work-card-sub">Brand identity design</p>
+            <div class="work-card-links">
+              <a href="#" class="work-link primary-link">Link</a>
+              <a href="#" class="work-link outline-link">Case Study</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 6 -->
+        <div class="work-card fade-up">
+          <div class="work-card-image">
+            <img src="gym membership software.png" alt="Road Rules App v4">
+          </div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">TutoRaan app</h3>
+            <p class="work-card-sub">Dashboard design system</p>
+            <div class="work-card-links">
+              <a href="#" class="work-link primary-link">Link</a>
+              <a href="#" class="work-link outline-link">Case Study</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="works-more fade-up">
+        <a href="https://www.behance.net/chrishtoberN" class="btn-primary">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header fade-up">
+        <p class="section-label"> Specialization</p>
+        <h2 class="section-title">What I Do</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <span class="material-symbols-outlined">phone_iphone</span>
+          </div>
+          <h3>Mobile App Design</h3>
+          <p>Designing intuitive and engaging mobile experiences for iOS and Android platforms.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <span class="material-symbols-outlined">language</span>
+          </div>
+          <h3>Website Design</h3>
+          <p>Creating conversion-focused, aesthetically pleasing websites for diverse brands.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <span class="material-symbols-outlined">code</span>
+          </div>
+          <h3>No-Code Development</h3>
+          <p>Building functional MVPs and websites using powerful no-code tools like Framer.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <span class="material-symbols-outlined">devices</span>
+          </div>
+          <h3>Responsive Design</h3>
+          <p>Ensuring your product looks and performs flawlessly across every screen size.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <span class="material-symbols-outlined">developer_board</span>
+          </div>
+          <h3>Software Design</h3>
+          <p>Architecting complex SaaS platforms and enterprise software interfaces.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <span class="material-symbols-outlined">brush</span>
+          </div>
+          <h3>Logo and Posters</h3>
+          <p>Crafting memorable brand identities and high-impact visual communications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-header fade-up">
+        <p class="section-label">Let's Talk</p>
+        <h2 class="section-title">Build your connection with me</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-left fade-up">
+          <h3>Get in Touch Me</h3>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="ci-icon">
+                <span class="material-symbols-outlined">call</span>
+              </div>
+              <div class="ci-text">+91 9384493273</div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">
+                <span class="material-symbols-outlined">mail</span>
+              </div>
+              <div class="ci-text">chrishtoberuiux@gmail.com</div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  fill="currentColor">
+                  <title>WhatsApp</title>
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                </svg>
+              </div>
+              <div class="ci-text">+91 9384493273</div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <div class="ci-text">Tiruppur, Tamil Nadu, India</div>
+            </div>
+          </div>
+          <p class="social-heading">Social Media</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/chrishtober-n-4bb75236a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src="linkdin.svg" alt="LinkedIn" width="24" height="24">
+            </a>
+            <a href="https://www.behance.net/chrishtoberN" class="social-link" target="_blank" rel="noopener noreferrer"
+              aria-label="Behance">
+              <img src="behance.svg" alt="Behance" width="24" height="24">
+            </a>
+            <a href="mailto:chrishtoberuiux@gmail.com" class="social-link" aria-label="Gmail">
+              <img src="gmail.svg" alt="Gmail" width="24" height="24">
+            </a>
+            <a href="https://www.instagram.com/veltrix_chrishto?igsh=aXNxN3VqejgzemN6" class="social-link"
+              target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img src="insta.svg" alt="Instagram" width="24" height="24">
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-right fade-up">
+          <h3>Get In Touch Me</h3>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="How can I help you?" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-send">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <!-- Footer Top -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo"><span> Chrishto </span></a>
+          <p class="footer-tagline">Crafting seamless digital experiences through user-centered design. Let's build
+            something amazing together.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/chrishtober-n-4bb75236a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src="linkdin.svg" alt="LinkedIn" width="24" height="24">
+            </a>
+            <a href="https://www.behance.net/chrishtoberN" class="footer-social-link" target="_blank"
+              rel="noopener noreferrer" aria-label="Behance">
+              <img src="behance.svg" alt="Behance" width="24" height="24">
+            </a>
+            <a href="mailto:chrishtoberuiux@gmail.com" class="footer-social-link" aria-label="Gmail">
+              <img src="gmail.svg" alt="Gmail" width="24" height="24">
+            </a>
+            <a href="https://www.instagram.com/veltrix_chrishto?igsh=aXNxN3VqejgzemN6" class="footer-social-link"
+              target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img src="insta.svg" alt="Instagram" width="24" height="24">
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#works">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Mobile App Design</a></li>
+            <li><a href="#services">Website Design</a></li>
+            <li><a href="#services">No-Code Dev</a></li>
+            <li><a href="#services">Software Design</a></li>
+            <li><a href="#services">Logo & Posters</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 class="footer-heading">Get In Touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <span class="material-symbols-outlined">mail</span>
+              chrishtoberuiux@gmail.com
+            </li>
+            <li>
+              <span class="material-symbols-outlined">call</span>
+              +91 9384493273
+            </li>
+            <li>
+              <span class="material-symbols-outlined">location_on</span>
+              Tiruppur, Tamil Nadu, India
+            </li>
+          </ul>
+          <div class="footer-newsletter">
+            <p class="newsletter-label">Stay Updated</p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Enter your email" class="newsletter-input" id="newsletterEmail">
+              <button class="newsletter-btn" onclick="subscribeNewsletter()">
+                <span class="material-symbols-outlined">send</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Divider -->
+      <div class="footer-divider"></div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Chrishtober N. All rights reserved.</p>
+        <button class="back-to-top" onclick="scrollToSection('home')" aria-label="Back to top">
+          <span class="material-symbols-outlined">arrow_upward</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
