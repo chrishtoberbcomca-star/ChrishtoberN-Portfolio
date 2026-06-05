@@ -56,6 +56,30 @@ window.addEventListener('scroll', () => {
 const skillTabs = document.querySelectorAll('.skill-tab');
 const skillPanels = document.querySelectorAll('.skill-panel');
 
+function animatePanelSkills(panel) {
+  const cards = panel.querySelectorAll('.skill-card');
+  cards.forEach((card, i) => {
+    const bar = card.querySelector('.skill-card-bar');
+    const targetWidth = bar.getAttribute('data-width') || '0%';
+    
+    // Set initial transition styles
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(15px)';
+    bar.style.width = '0';
+    
+    setTimeout(() => {
+      card.style.transition = 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+      
+      // Delay progress bar animation slightly after card fades in
+      setTimeout(() => {
+        bar.style.width = targetWidth;
+      }, 150);
+    }, i * 60);
+  });
+}
+
 skillTabs.forEach(tab => {
   tab.addEventListener('click', () => {
     const target = tab.getAttribute('data-tab');
@@ -67,20 +91,20 @@ skillTabs.forEach(tab => {
       panel.classList.remove('active');
       if (panel.id === 'panel-' + target) {
         panel.classList.add('active');
-        // Animate tags in
-        const tags = panel.querySelectorAll('.skill-tag');
-        tags.forEach((tag, i) => {
-          tag.style.opacity = '0';
-          tag.style.transform = 'translateY(10px)';
-          setTimeout(() => {
-            tag.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-            tag.style.opacity = '1';
-            tag.style.transform = 'translateY(0)';
-          }, i * 40);
-        });
+        animatePanelSkills(panel);
       }
     });
   });
+});
+
+// Trigger skills animation on page load for the active panel
+window.addEventListener('DOMContentLoaded', () => {
+  const activePanel = document.querySelector('.skill-panel.active');
+  if (activePanel) {
+    setTimeout(() => {
+      animatePanelSkills(activePanel);
+    }, 400);
+  }
 });
 
 // ========== SCROLL REVEAL (fade-up) ==========
@@ -110,10 +134,18 @@ function handleSubmit(e) {
   const name = form.querySelector('#fullName').value.trim();
   const email = form.querySelector('#email').value.trim();
   const message = form.querySelector('#message').value.trim();
+  const honey = form.querySelector('#honey') ? form.querySelector('#honey').value : '';
 
   // Basic validation
   if (!name || !email || !message) {
     alert('Please fill in all fields.');
+    return;
+  }
+
+  // Email format validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
     return;
   }
 
@@ -132,7 +164,8 @@ function handleSubmit(e) {
     body: JSON.stringify({
       name: name,
       email: email,
-      message: message
+      message: message,
+      _honey: honey
     })
   })
   .then(response => response.json())
